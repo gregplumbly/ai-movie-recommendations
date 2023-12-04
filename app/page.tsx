@@ -1,5 +1,6 @@
 import Image from "next/image";
 import MovieSelection from "./components/MovieSelection";
+import { openai, supabase } from './lib/generate-embeddings';
 
 export default function Home() {
     return (
