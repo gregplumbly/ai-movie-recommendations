@@ -1,4 +1,11 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {};
 
-module.exports = nextConfig
+module.exports = {
+    webpack: (config, { isServer }) => {
+        if (isServer) {
+            require("./app/scripts/generateEmbeddings");
+        }
+        return config;
+    },
+};
